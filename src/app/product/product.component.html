@@ -29,6 +29,7 @@
         <td>PRICE</td>
         <td>QUANTITY</td>
         <td>CATEGORY</td>
+        <td>Like</td>
     </tr>
     <tr *ngFor="let p of products">
         <td>{{p.id}}</td>
@@ -36,7 +37,12 @@
         <td>{{p.price}}</td>
         <td>{{p.quantity}}</td>
         <td>{{p.category.type}}</td>
+        <td>{{p.like}}</td>
+        <td><button (click)='like(p)'>Like</button>
+        <p *ngIf="p.like>5">Best Product</p>
+        </td>
     </tr>
+
 </table>
 </div>
 <div *ngIf="products.length == 0">
