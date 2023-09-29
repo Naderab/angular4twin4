@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from '../core/product';
+import { Product } from '../../core/product';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -8,7 +8,7 @@ import { Product } from '../core/product';
 export class ProductComponent {
   title: string = 'Products list';
   color: string = 'red';
-  search: string = "";
+  search: string = '';
   products: Product[] = [
     {
       id: '1',
@@ -16,7 +16,7 @@ export class ProductComponent {
       price: 3000,
       quantity: 10,
       category: { id: '1', type: 'phone' },
-      like : 0
+      like: 0,
     },
     {
       id: '2',
@@ -24,7 +24,7 @@ export class ProductComponent {
       price: 2000,
       quantity: 0,
       category: { id: '2', type: 'electro' },
-      like: 0
+      like: 0,
     },
     {
       id: '3',
@@ -32,7 +32,7 @@ export class ProductComponent {
       price: 50,
       quantity: 20,
       category: { id: '3', type: 'informatique' },
-      like: 0
+      like: 0,
     },
   ];
 
@@ -40,7 +40,7 @@ export class ProductComponent {
   //   return p.quantity == 0 ? 'red' : 'green';
   // }
   getColor(t: string) {
-    console.log(t)
+    console.log(t);
     return t;
   }
   buy(p: Product) {
@@ -48,8 +48,7 @@ export class ProductComponent {
   }
 
   searchProduct() {
-    this.products = this.products.filter(p => p.name == this.search);
-
+    this.products = this.products.filter((p) => p.name == this.search);
   }
   like(t: Product) {
     t.like++;
