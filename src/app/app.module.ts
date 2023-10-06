@@ -11,6 +11,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListUsersComponent } from './pages/list-users/list-users.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ListUsersComponent } from './pages/list-users/list-users.component';
     HeaderComponent,
     HomeComponent,
     ListUsersComponent,
+    NotFoundComponent,
+    UserComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

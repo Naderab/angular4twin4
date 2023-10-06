@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+  iddd = 4;
+  nameee = 'testtest';
 }
