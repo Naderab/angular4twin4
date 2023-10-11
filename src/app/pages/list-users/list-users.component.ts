@@ -8,8 +8,7 @@ import { User } from 'src/app/core/user';
   styleUrls: ['./list-users.component.css'],
 })
 export class ListUsersComponent {
-
-  constructor(private _router:Router) {}
+  constructor(private _router: Router) {}
   listUsers: User[] = [
     {
       idCustomer: 1,
@@ -68,7 +67,7 @@ export class ListUsersComponent {
     },
   ];
 
-  ToDetails(user:User) {
-    this._router.navigate(['user',user.idCustomer,user.firstName]);
+  ToDetails(user: User) {
+    this._router.navigate(['user', user.idCustomer, user.firstName]);
   }
 }

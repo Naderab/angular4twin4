@@ -3,31 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './pages/product/product.component';
 import { FormsModule } from '@angular/forms';
-import { FournisseurComponent } from './pages/fournisseur/fournisseur.component';
-import { ListFournisseurComponent } from './pages/list-fournisseur/list-fournisseur.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './pages/home/home.component';
-import { ListUsersComponent } from './pages/list-users/list-users.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { UserComponent } from './pages/user/user.component';
+import { FournisseurModule } from './features/fournisseur/fournisseur.module';
+import { UserModule } from './features/user/user.module';
+import { ProductModule } from './features/product/product.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
-    FournisseurComponent,
-    ListFournisseurComponent,
     NavbarComponent,
     HeaderComponent,
-    HomeComponent,
-    ListUsersComponent,
     NotFoundComponent,
-    UserComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
