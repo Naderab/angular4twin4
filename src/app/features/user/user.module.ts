@@ -9,6 +9,6 @@ import { UserComponent } from 'src/app/pages/user/user.component';
 
 @NgModule({
   declarations: [HomeComponent, ListUsersComponent, UserComponent],
-  imports: [CommonModule, UserRoutingModule],
+  imports: [CommonModule, UserRoutingModule]
 })
 export class UserModule {}

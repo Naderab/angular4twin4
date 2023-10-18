@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../../core/product';
+import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -9,6 +10,7 @@ export class ProductComponent {
   title: string = 'Products list';
   color: string = 'red';
   search: string = '';
+  constructor(private _userService: UserService){}
   products: Product[] = [
     {
       id: '1',
@@ -52,5 +54,9 @@ export class ProductComponent {
   }
   like(t: Product) {
     t.like++;
+  }
+
+  add() {
+    this._userService.addToList('c');
   }
 }
