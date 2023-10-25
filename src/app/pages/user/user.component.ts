@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/core/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -8,12 +9,14 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-  id: string | null ='';
-  constructor(private _activated: ActivatedRoute) {
+
+  id: number = 0;
+  user : User= new User();
+  constructor(private _activated: ActivatedRoute, private userService : UserService  ) {
 
     /** pathParam exemple localhsot:4200/user/1/test*/
     this._activated.paramMap.subscribe(params => {
-      this.id = params.get('id');
+      this.id = Number(params.get('id'));
       console.log(params.get('name'))
       console.log(params.get('id'));
     })
@@ -28,5 +31,11 @@ export class UserComponent {
     this._activated.queryParamMap.subscribe((params) => {
       console.log(params.get('min'));
     });
-   }
+    this.userService.fetchUserById(this.id).subscribe({
+      next : (data)=> {this.user = data as User}
+    })
+
+
+  }
+  
 }
