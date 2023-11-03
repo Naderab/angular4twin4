@@ -1,0 +1,66 @@
+<form #f="ngForm" (ngSubmit)="add(f)">
+    <div class="mb-3">
+        <label class="form-label">
+            First Name
+        </label>
+        <input class="form-control" name="firstName" type="text" 
+        ngModel required minlength="3" #firstName="ngModel">
+        <!-- touched : {{firstName.touched}}<br>
+        untouched : {{firstName.untouched}}<br>
+        dirty : {{firstName.dirty}}<br>
+        pristine : {{firstName.pristine}}<br>
+        valid : {{firstName.valid}}<br>
+        invalid : {{firstName.invalid}}<br>
+        Errors : {{firstName.errors|json}}-->
+        <div class="alert alert-danger" 
+        *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">
+                <div *ngIf="firstName.errors!['required']">FirstName is required !</div> 
+                <div *ngIf="firstName.errors!['minlength']">FirstName must have at least 3 characters !</div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Last Name
+        </label>
+        <input class="form-control" name="lastName" type="text">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Birth Date
+        </label>
+        <input class="form-control" name="birthDate" type="date">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            FirstName
+        </label>
+        <input class="form-control" name="firstName" type="text">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Email
+        </label>
+        <input class="form-control" name="email" type="email">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Password
+        </label>
+        <input class="form-control" name="password" type="password">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Profession
+        </label>
+        <input class="form-control" name="profession" type="text">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Customer Category
+        </label>
+       <input type="text" name="accountCategort" value="Customer" readonly>
+    </div>
+    <div class="mb-3">
+        <input type="submit" value="Add user" [disabled]="f.invalid">
+    </div>
+</form>
