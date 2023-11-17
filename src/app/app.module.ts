@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule} from '@angular/common/http';
+import { FormReactiveUserComponent } from './pages/form-reactive-user/form-reactive-user.component';
 @NgModule({
   declarations: [
     AppComponent,

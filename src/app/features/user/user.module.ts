@@ -6,7 +6,8 @@ import { HomeComponent } from 'src/app/pages/home/home.component';
 import { ListUsersComponent } from 'src/app/pages/list-users/list-users.component';
 import { UserComponent } from 'src/app/pages/user/user.component';
 import { FormUserComponent } from 'src/app/pages/form-user/form-user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormReactiveUserComponent } from 'src/app/pages/form-reactive-user/form-reactive-user.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     ListUsersComponent,
     UserComponent,
     FormUserComponent,
+    FormReactiveUserComponent,
   ],
-  imports: [CommonModule, UserRoutingModule,FormsModule],
+  imports: [CommonModule, UserRoutingModule, FormsModule, ReactiveFormsModule],
 })
 export class UserModule {}

@@ -1,0 +1,32 @@
+<input type="text" [formControl]="username">
+<br>
+{{username.value}}
+<br>
+{{username.status}}
+<br>
+{{username.touched}}
+
+<form [formGroup]="userForm">
+    <input type="text" formControlName="firstName"><br>
+    <input type="text" formControlName="lastName"><br>
+    <div *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
+        <div *ngIf="lastName.errors!['required']">last name is required</div>
+        <div *ngIf="lastName.errors!['minlength']"> last name must have at least 3 characters</div>
+    </div>
+    <div formGroupName="address">
+        <input type="text" formControlName="city"><br>
+        <input type="text" formControlName="street"><br>
+        <div *ngIf="userForm.get('address')!.get('street')!.invalid && (userForm.get('address')!.get('street')!.touched || userForm.get('address')!.get('street')!.dirty)">
+            <div>Street is required</div>
+            <div> Street must have at least 3 characters</div>
+        </div>
+    </div>
+    <div formArrayName="competences">
+        Competences :
+        <button (click)="addCompetence()">+</button>
+      <div *ngFor="let c of competences.controls;let i=index">
+            <input type="text" [formControlName]="i">
+      </div>
+    </div>
+    <input type="submit" value="Add" (click)="add()">
+</form>

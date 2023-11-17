@@ -31,16 +31,6 @@
       "profession": "test",
       "accountCategory": "Customer",
       "id": 3
-    },
-    {
-      "email": "ahmed@gmail.com",
-      "password": "azazazazaz",
-      "firstName": "testtest",
-      "lastName": "azazaza",
-      "birthDate": "2023-11-17",
-      "profession": "test",
-      "accountCategory": "Customer",
-      "id": 4
     }
   ],
   "fournisseurs": []
