@@ -31,6 +31,26 @@
       "profession": "test",
       "accountCategory": "Customer",
       "id": 3
+    },
+    {
+      "firstName": "Nader",
+      "lastName": "Abdellaoui",
+      "email": "abdellaouinader@gmail.com",
+      "password": "test12AA",
+      "birthDate": "2023-11-01",
+      "profession": "Test",
+      "accountCategory": "Customer",
+      "id": 4
+    },
+    {
+      "firstName": "testtest",
+      "lastName": "test",
+      "email": "test@esprit.tn",
+      "password": "Test1234",
+      "birthDate": "2023-11-18",
+      "profession": "test",
+      "accountCategory": "Customer",
+      "id": 5
     }
   ],
   "fournisseurs": []

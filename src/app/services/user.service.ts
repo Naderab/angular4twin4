@@ -90,7 +90,7 @@ export class UserService {
   }
 
   fetchUserById(id: number) {
-    return this._http.get(this.apiUrl + id);
+    return this._http.get<User>(this.apiUrl + id);
   }
 
   addUser(user: User) {
