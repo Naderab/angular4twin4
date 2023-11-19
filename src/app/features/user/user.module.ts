@@ -12,7 +12,6 @@ import { FormReactiveUserComponent } from 'src/app/pages/form-reactive-user/form
 
 @NgModule({
   declarations: [
-    HomeComponent,
     ListUsersComponent,
     UserComponent,
     FormUserComponent,

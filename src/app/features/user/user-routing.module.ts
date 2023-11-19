@@ -7,15 +7,11 @@ import { ListUsersComponent } from 'src/app/pages/list-users/list-users.componen
 import { UserComponent } from 'src/app/pages/user/user.component';
 
 const routes: Routes = [
-  { path: 'list', component: ListUsersComponent },
+  { path: '', component: ListUsersComponent },
   { path: 'update/:id', component: FormUserComponent },
   { path: 'updateReactive/:id', component: FormReactiveUserComponent },
 
   { path: ':id/:name', component: UserComponent },
-  {
-    path: '',
-    component: HomeComponent,
-  },
   { path: 'add', component: FormUserComponent },
   { path: 'addReactive', component: FormReactiveUserComponent },
 ];

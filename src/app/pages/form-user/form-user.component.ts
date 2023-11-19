@@ -31,11 +31,12 @@ export class FormUserComponent implements OnInit {
     console.log('function works !');
     if (this.id !== undefined) {
       this.userService.updateUser(this.user, this.id).subscribe({
-        next: () => this.router.navigate(['/user/list']),
+        next: () => this.router.navigate(['/user']),
       });
     } else {
+      this.user.picture = `https://bootdey.com/img/Content/avatar/avatar${Math.floor(Math.random() * (7 - 1 + 1) + 1)}.png`;
       this.userService.addUser(this.user).subscribe({
-        next: () => this.router.navigate(['/user/list']),
+        next: () => this.router.navigate(['/user']),
       });
     }
   }

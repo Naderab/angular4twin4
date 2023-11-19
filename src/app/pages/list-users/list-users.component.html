@@ -18,7 +18,7 @@
                             <tr *ngFor="let user of listUsers">
                                 <td>
                                     <img [src]="user.picture" alt="">
-                                    <a href="#" class="user-link">{{user.firstName}} {{user.lastName}}</a>
+                                    <a (click)="ToDetails(user)" class="user-link">{{user.firstName}} {{user.lastName}}</a>
                                     <span class="user-subhead">{{user.accountCategory}}</span>
                                 </td>
                                 <td>
@@ -31,24 +31,24 @@
                                     <a href="#">{{user.email}}</a>
                                 </td>
                                 <td style="width: 20%;">
-                                    <button (click)="ToDetails(user)" class="table-link">
+                                    <a (click)="ToDetails(user)" class="table-link">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                         </span>
-                                    </button>
+                                    </a>
                                     <a [routerLink]="['/user/update',user.id]" class="table-link">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                    <button (click)="deleteUser(user.id)" class="table-link danger">
+                                    <a (click)="deleteUser(user.id)" class="table-link danger">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                         </span>
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>
@@ -59,11 +59,11 @@
     </div>
 </div>
 
-<ul>
+<!--<ul>
     <li *ngFor="let i of list">
         {{i}}
     </li>
 </ul>
 <button (click)="Calculer()">Calculer</button>
 
-Result = {{result}}
+Result = {{result}}-->

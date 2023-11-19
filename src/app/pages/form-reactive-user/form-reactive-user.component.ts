@@ -124,14 +124,13 @@ export class FormReactiveUserComponent implements OnInit {
     console.log(this.userForm.getRawValue());
     if (this.id !== undefined) {
       this.userService.updateUser(this.userFormB.getRawValue(), this.id).subscribe({
-        next: () => this.router.navigate(['/user/list']),
+        next: () => this.router.navigate(['/user']),
       });
     }
     else {
-      this.userFormB.getRawValue().picture =
-        'https://bootdey.com/img/Content/avatar/avatar3.png';
+      this.userFormB.getRawValue().picture =`https://bootdey.com/img/Content/avatar/avatar${Math.floor(Math.random() * (7 - 1 + 1) + 1)}.png`;
       this.userService.addUser(this.userFormB.getRawValue()).subscribe({
-        next: () => this.router.navigate(['/user/list']),
+        next: () => this.router.navigate(['/user']),
       });
     }
   }
