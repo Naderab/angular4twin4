@@ -23,6 +23,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/user/user.module').then((m) => m.UserModule),
   },
+  {
+    path: 'account',
+    loadChildren: () =>
+      import('./features/account/account.module').then((m) => m.AccountModule),
+  },
   { path: '**', component: NotFoundComponent },
 ];
 
