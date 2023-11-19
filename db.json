@@ -53,5 +53,19 @@
       "id": 5
     }
   ],
-  "fournisseurs": []
+  "fournisseurs": [],
+  "accounts": [
+    {
+      "id": 2,
+      "title": "Customer",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "image": "https://bootdey.com/img/Content/avatar/avatar3.png"
+    },
+    {
+      "id": 3,
+      "title": "Golden",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "image": "https://bootdey.com/img/Content/avatar/avatar2.png"
+    }
+  ]
 }
