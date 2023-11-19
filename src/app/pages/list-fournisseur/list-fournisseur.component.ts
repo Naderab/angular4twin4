@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Fournisseur } from '../../core/fournisseur';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-fournisseur',
@@ -7,6 +8,8 @@ import { Fournisseur } from '../../core/fournisseur';
   styleUrls: ['./list-fournisseur.component.css'],
 })
 export class ListFournisseurComponent {
+
+  constructor(private _router:Router) {}
   search = '';
   listFournisseurs: Fournisseur[] = [
     { idFournisseur: 1, code: '1ABC4522', libelle: 'hp' },
@@ -34,5 +37,9 @@ export class ListFournisseurComponent {
         (e) => e.libelle == this.search
       );
     }
+  }
+
+  toDetails(f: Fournisseur) {
+    this._router.navigate(['fournisseur',f.code,f.libelle,f.idFournisseur])
   }
 }

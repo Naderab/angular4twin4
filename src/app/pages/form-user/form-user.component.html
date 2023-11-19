@@ -1,0 +1,84 @@
+<form #f="ngForm" (ngSubmit)="add(f)">
+    <div class="mb-3">
+        <label class="form-label">
+            First Name
+        </label>
+        <input class="form-control" name="firstName" type="text" 
+        [(ngModel)]="user.firstName" required minlength="3" pattern="[a-zA-Z]*" #firstName="ngModel">
+        <!-- touched : {{firstName.touched}}<br>
+        untouched : {{firstName.untouched}}<br>
+        dirty : {{firstName.dirty}}<br>
+        pristine : {{firstName.pristine}}<br>
+        valid : {{firstName.valid}}<br>
+        invalid : {{firstName.invalid}}<br>
+        Errors : {{firstName.errors|json}}-->
+        <div class="alert alert-danger" 
+        *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">
+                <div *ngIf="firstName.errors!['required']">FirstName is required !</div> 
+                <div *ngIf="firstName.errors!['minlength']">FirstName must have at least 3 characters !</div>
+                <div *ngIf="firstName.errors!['pattern']">FirstName invalid !</div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Last Name
+        </label>
+        <input class="form-control" name="lastName" type="text" [(ngModel)]="user.lastName" #lastName="ngModel" required minlength="3" pattern="[a-zA-Z]*">
+    <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
+        <div *ngIf="lastName.errors!['required']">Last Name is required </div>
+        <div *ngIf="lastName.errors!['minlength']">Last Name must have at least 3 characters !</div>
+        <div *ngIf="lastName.errors!['pattern']">Last Name invalid !</div>
+    </div>
+    
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Birth Date
+        </label>
+        <input class="form-control" [(ngModel)]="user.birthDate" name="birthDate" type="date">
+    </div>
+    
+    <div class="mb-3">
+        <label class="form-label">
+            Email
+        </label>
+        <input class="form-control" name="email" type="email" [(ngModel)]="user.email" #email="ngModel" pattern="([a-zA-Z0-9._-]+@gmail.com|[a-zA-Z0-9._-]+@esprit.tn)">
+    <div class="alert alert-danger" *ngIf="email.invalid && (email.touched || email.dirty)">
+        Email invalid!
+    </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Password
+        </label>
+        <input class="form-control" name="password" type="password" [(ngModel)]="user.password" #password="ngModel" pattern="^[a-zA-Z0-9]{8,}?">
+    <div class="alert alert-danger" *ngIf="password.invalid && (password.touched || password.dirty)">
+        Un mot de passe doit répondre aux critères ci-dessous :
+        <ul>
+        <li>Caractères minuscules de a à z non accentués</li>
+        <li>Caractères majuscules de A à Z non accentués</li>
+        <li>Chiffres de 0 à 9</li>
+        <li>Au moins 8 caractères</li>
+        </ul>
+    </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Profession
+        </label>
+        <input class="form-control" [(ngModel)]="user.profession" name="profession" type="text">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Customer Category
+        </label>
+       <input class="form-control" type="text" name="accountCategory" value="Customer" [(ngModel)]="user.accountCategory" #accountCategory="ngModel" pattern="(Customer|customer)">
+    <div class="alert alert-danger" *ngIf="accountCategory.invalid && (accountCategory.touched || accountCategory.dirty)">
+        Account Category must be only "Customer"
+    </div>
+    </div>
+    <div class="mb-3">
+        <input type="submit" [value]="getButtonMessage()" [disabled]="f.invalid">
+    </div>
+</form>
+

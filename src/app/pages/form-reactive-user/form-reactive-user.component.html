@@ -1,0 +1,123 @@
+<!--<input type="text" [formControl]="username">
+<br>
+{{username.value}}
+<br>
+{{username.status}}
+<br>
+{{username.touched}}
+
+<form [formGroup]="userForm">
+    <input type="text" formControlName="firstName"><br>
+    <input type="text" formControlName="lastName"><br>
+    <div *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
+        <div *ngIf="lastName.errors!['required']">last name is required</div>
+        <div *ngIf="lastName.errors!['minlength']"> last name must have at least 3 characters</div>
+    </div>
+    <div formGroupName="address">
+        <input type="text" formControlName="city"><br>
+        <input type="text" formControlName="street"><br>
+        <div *ngIf="userForm.get('address')!.get('street')!.invalid && (userForm.get('address')!.get('street')!.touched || userForm.get('address')!.get('street')!.dirty)">
+            <div>Street is required</div>
+            <div> Street must have at least 3 characters</div>
+        </div>
+    </div>
+    <div formArrayName="competences">
+        Competences :
+        <button (click)="addCompetence()">+</button>
+      <div *ngFor="let c of competences.controls;let i=index">
+            <input type="text" [formControlName]="i">
+      </div>
+    </div>
+    <input type="submit" value="Add" (click)="add()">
+</form>
+-->
+
+<form [formGroup]="userFormB" (ngSubmit)="add()">
+    <div class="mb-3">
+        <label class="form-label">
+            First Name
+        </label>
+        <input class="form-control" type="text" formControlName="firstName" 
+             >
+        <!-- touched : {{firstName.touched}}<br>
+        untouched : {{firstName.untouched}}<br>
+        dirty : {{firstName.dirty}}<br>
+        pristine : {{firstName.pristine}}<br>
+        valid : {{firstName.valid}}<br>
+        invalid : {{firstName.invalid}}<br>
+        Errors : {{firstName.errors|json}}-->
+        <div class="alert alert-danger" *ngIf="userFormB.get('firstName')!.invalid && (userFormB.get('firstName')!.touched || userFormB.get('firstName')!.dirty)">
+            <div *ngIf="userFormB.get('firstName')!.errors!['required']">FirstName is required !</div>
+            <div *ngIf="userFormB.get('firstName')!.errors!['minlength']">FirstName must have at least 3 characters !</div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Last Name
+        </label>
+        <input class="form-control" formControlName="lastName" type="text" 
+            >
+        <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
+            <div *ngIf="lastName.errors!['required']">Last Name is required </div>
+            <div *ngIf="lastName.errors!['minlength']">Last Name must have at least 3 characters !</div>
+            <div *ngIf="lastName.errors!['pattern']">Last Name invalid !</div>
+        </div>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Birth Date
+        </label>
+        <input class="form-control" formControlName="birthDate" type="date">
+    <div class="alert alert-danger" *ngIf="birthDate.invalid && (birthDate.touched || birthDate.dirty)">
+        <div *ngIf="birthDate.errors!['required']">birthDate is required </div>
+    </div>
+</div>
+
+
+    <div class="mb-3">
+        <label class="form-label">
+            Email
+        </label>
+        <input class="form-control"  type="email" formControlName="email"
+            >
+        <div class="alert alert-danger" *ngIf="email.invalid && (email.touched || email.dirty)">
+            Email invalid!
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Password
+        </label>
+        <input class="form-control"  type="password" 
+            formControlName="password">
+        <div class="alert alert-danger" *ngIf="password.invalid && (password.touched || password.dirty)">
+            Un mot de passe doit répondre aux critères ci-dessous :
+            <ul>
+                <li>Caractères minuscules de a à z non accentués</li>
+                <li>Caractères majuscules de A à Z non accentués</li>
+                <li>Chiffres de 0 à 9</li>
+                <li>Au moins 8 caractères</li>
+            </ul>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Profession
+        </label>
+        <input class="form-control" formControlName="profession" type="text">
+    <div class="alert alert-danger" *ngIf="profession.invalid && (profession.touched || profession.dirty)">
+        <div *ngIf="profession.errors!['required']">profession is required </div>
+    </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Customer Category
+        </label>
+        <input class="form-control" type="text" formControlName="accountCategory">
+      
+    </div>
+    <div class="mb-3">
+        <input type="submit"  [disabled]="userFormB.invalid">
+    </div>
+</form>
