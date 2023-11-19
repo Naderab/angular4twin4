@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/core/user';
 
 @Component({
@@ -7,6 +8,8 @@ import { User } from 'src/app/core/user';
   styleUrls: ['./list-users.component.css'],
 })
 export class ListUsersComponent {
+
+  constructor(private _router:Router) {}
   listUsers: User[] = [
     {
       idCustomer: 1,
@@ -64,4 +67,8 @@ export class ListUsersComponent {
       profession: 'Software Engineer',
     },
   ];
+
+  ToDetails(user:User) {
+    this._router.navigate(['user',user.idCustomer,user.firstName]);
+  }
 }
