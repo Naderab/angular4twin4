@@ -9,11 +9,16 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class ListAccountsComponent implements OnInit {
   listAccounts:Account[]=[]
+  property:string = 'bonjour';
     constructor(private accountService:AccountService){}
   ngOnInit() {
     this.accountService.getAllAcounts().subscribe({
       next: (data)=> this.listAccounts = data
     })
+    
+  }
+  testChanges(){
+    this.property = 'bonsoir';
   }
 
   delete(event:any) {

@@ -8,11 +8,15 @@ import { Account } from 'src/app/core/account';
 })
 export class AccountComponent implements OnChanges {
   // test = 10;
-  @Input() account!: Account;
+  @Input() account!: Account;  
   @Output() d = new EventEmitter<number>();
 
   deleteChild(id: number) {
     this.d.emit(id);
+    this.d.emit(0);
+    this.d.emit(10);
+
+    
     // this.d.emit(this.test)
     // console.log(
     //   this.d.subscribe({
