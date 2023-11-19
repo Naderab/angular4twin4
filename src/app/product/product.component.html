@@ -1,1 +1,50 @@
 <p class="title">product works!</p>
+<input type="text" name="color" [(ngModel)]="color">
+{{color}}
+<p [style.color]="color">{{title}}</p>
+<!--{{product.id}}
+<p [style.color]="product.quantity == 0 ? 'red' : 'green'">{{product.name}}</p>
+<p [class]="product.quantity == 0 ? 'redtitle' : 'greentitle'">{{product.name}}</p>
+
+{{product.price}}
+{{product.quantity}}
+{{product.category.id}}
+{{product.category.type}}
+<button [disabled]="product.quantity == 0" (click)="buy(product)">Buy</button>
+<p [style.color]="getColor(product2)">{{product2.name}}</p>
+{{product2.id}}
+
+{{product2.price}}
+{{product2.quantity}}
+{{product2.category.id}}
+{{product2.category.type}}
+<button [disabled]="product2.quantity == 0" (click)="buy(product2)">Buy</button>-->
+<div *ngIf="products.length > 0">
+<input type="text" name="search" [(ngModel)]="search">
+<button (click)="searchProduct()">Search</button>    
+<table>
+    <tr>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>PRICE</td>
+        <td>QUANTITY</td>
+        <td>CATEGORY</td>
+        <td>Like</td>
+    </tr>
+    <tr *ngFor="let p of products">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.category.type}}</td>
+        <td>{{p.like}}</td>
+        <td><button (click)='like(p)'>Like</button>
+        <p *ngIf="p.like>5">Best Product</p>
+        </td>
+    </tr>
+
+</table>
+</div>
+<div *ngIf="products.length == 0">
+    <p>Pas de produit</p>
+</div>
