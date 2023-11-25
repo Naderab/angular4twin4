@@ -9,6 +9,7 @@ import { Account } from 'src/app/core/account';
 export class AccountComponent implements OnChanges {
   // test = 10;
   @Input() account!: Account;  
+  @Input() p!: number;
   @Output() d = new EventEmitter<number>();
 
   deleteChild(id: number) {

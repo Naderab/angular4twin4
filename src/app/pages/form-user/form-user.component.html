@@ -10,25 +10,17 @@
         dirty : {{firstName.dirty}}<br>
         pristine : {{firstName.pristine}}<br>
         valid : {{firstName.valid}}<br>
-        invalid : {{firstName.invalid}}<br>
-        Errors : {{firstName.errors|json}}-->
-        <div class="alert alert-danger" 
-        *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">
-                <div *ngIf="firstName.errors!['required']">FirstName is required !</div> 
-                <div *ngIf="firstName.errors!['minlength']">FirstName must have at least 3 characters !</div>
-                <div *ngIf="firstName.errors!['pattern']">FirstName invalid !</div>
-        </div>
+        invalid : {{firstName.invalid}}<br>-->
+        Errors : {{firstName.errors|json}}
+        <app-error [control]="firstName.control" [name]="firstName.name"></app-error>
     </div>
     <div class="mb-3">
         <label class="form-label">
             Last Name
         </label>
-        <input class="form-control" name="lastName" type="text" [(ngModel)]="user.lastName" #lastName="ngModel" required minlength="3" pattern="[a-zA-Z]*">
-    <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
-        <div *ngIf="lastName.errors!['required']">Last Name is required </div>
-        <div *ngIf="lastName.errors!['minlength']">Last Name must have at least 3 characters !</div>
-        <div *ngIf="lastName.errors!['pattern']">Last Name invalid !</div>
-    </div>
+        <input class="form-control" name="lastName" type="text" [(ngModel)]="user.lastName" #lastName="ngModel" required minlength="5" pattern="[a-zA-Z]*">
+        <app-error [control]="lastName.control"   [name]="lastName.name"></app-error>
+
     
     </div>
     <div class="mb-3">

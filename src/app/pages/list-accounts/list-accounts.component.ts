@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Account } from 'src/app/core/account';
 import { AccountService } from 'src/app/services/account.service';
+import { AccountComponent } from '../account/account.component';
 
 @Component({
   selector: 'app-list-accounts',
@@ -9,17 +10,19 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class ListAccountsComponent implements OnInit {
   listAccounts:Account[]=[]
-  property:string = 'bonjour';
+  property = 0 ;
     constructor(private accountService:AccountService){}
+  changeProperty(){
+    this.property = 1;
+  }
   ngOnInit() {
+    //this.child.start()
     this.accountService.getAllAcounts().subscribe({
       next: (data)=> this.listAccounts = data
     })
     
   }
-  testChanges(){
-    this.property = 'bonsoir';
-  }
+
 
   delete(event:any) {
     console.log(event)

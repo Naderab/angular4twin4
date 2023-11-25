@@ -8,6 +8,7 @@ import { UserComponent } from 'src/app/pages/user/user.component';
 import { FormUserComponent } from 'src/app/pages/form-user/form-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormReactiveUserComponent } from 'src/app/pages/form-reactive-user/form-reactive-user.component';
+import { ErrorComponent } from 'src/app/pages/error/error.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FormReactiveUserComponent } from 'src/app/pages/form-reactive-user/form
     UserComponent,
     FormUserComponent,
     FormReactiveUserComponent,
+    ErrorComponent
   ],
   imports: [CommonModule, UserRoutingModule, FormsModule, ReactiveFormsModule],
 })

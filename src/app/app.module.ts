@@ -10,13 +10,20 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormReactiveUserComponent } from './pages/form-reactive-user/form-reactive-user.component';
 import { HomeComponent } from './pages/home/home.component';
+import { InvoicesComponent } from './pages/invoices/invoices.component';
+import { ListInvoicesComponent } from './pages/list-invoices/list-invoices.component';
+import { InvoiceComponent } from './pages/invoice/invoice.component';
+import { FormInvoiceComponent } from './pages/form-invoice/form-invoice.component';
+import { ErrorComponent } from './pages/error/error.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HeaderComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    
+
     
   ],
   imports: [
