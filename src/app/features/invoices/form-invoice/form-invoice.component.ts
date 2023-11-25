@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Invoice } from 'src/app/core/invoice';
+import { Invoice } from '../../../core/models/invoice';
 
 @Component({
   selector: 'app-form-invoice',

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { Account } from 'src/app/core/account';
-import { AccountService } from 'src/app/services/account.service';
-import { AccountComponent } from '../account/account.component';
+import { Account } from '../../../core/models/account';
+import { AccountService } from '../../../core/services/account.service';
+
 
 @Component({
   selector: 'app-list-accounts',

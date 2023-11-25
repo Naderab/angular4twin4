@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Invoice } from 'src/app/core/invoice';
+import { Invoice } from '../../../core/models/invoice';
 
 @Component({
   selector: 'app-list-invoices',

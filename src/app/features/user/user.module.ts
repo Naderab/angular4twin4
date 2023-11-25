@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
-import { HomeComponent } from 'src/app/pages/home/home.component';
-import { ListUsersComponent } from 'src/app/pages/list-users/list-users.component';
-import { UserComponent } from 'src/app/pages/user/user.component';
-import { FormUserComponent } from 'src/app/pages/form-user/form-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormReactiveUserComponent } from 'src/app/pages/form-reactive-user/form-reactive-user.component';
-import { ErrorComponent } from 'src/app/pages/error/error.component';
+import { ListUsersComponent } from './list-users/list-users.component';
+import { UserComponent } from './user/user.component';
+import { FormUserComponent } from './form-user/form-user.component';
+import { FormReactiveUserComponent } from './form-reactive-user/form-reactive-user.component';
+import { ErrorComponent } from '../../components/error/error.component';
+
 
 
 @NgModule({

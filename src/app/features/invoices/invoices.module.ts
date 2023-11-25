@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { InvoicesRoutingModule } from './invoices-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InvoicesComponent } from 'src/app/pages/invoices/invoices.component';
-import { ListInvoicesComponent } from 'src/app/pages/list-invoices/list-invoices.component';
-import { InvoiceComponent } from 'src/app/pages/invoice/invoice.component';
-import { FormInvoiceComponent } from 'src/app/pages/form-invoice/form-invoice.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InvoicesComponent } from './invoices/invoices.component';
+import { ListInvoicesComponent } from './list-invoices/list-invoices.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { FormInvoiceComponent } from './form-invoice/form-invoice.component';
+
 
 
 @NgModule({

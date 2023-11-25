@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
-import { Account } from 'src/app/core/account';
+import { Account } from '../../../core/models/account';
 
 @Component({
   selector: 'app-account',

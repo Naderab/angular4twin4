@@ -3,18 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule} from '@angular/common/http';
-import { FormReactiveUserComponent } from './pages/form-reactive-user/form-reactive-user.component';
 import { HomeComponent } from './pages/home/home.component';
-import { InvoicesComponent } from './pages/invoices/invoices.component';
-import { ListInvoicesComponent } from './pages/list-invoices/list-invoices.component';
-import { InvoiceComponent } from './pages/invoice/invoice.component';
-import { FormInvoiceComponent } from './pages/form-invoice/form-invoice.component';
-import { ErrorComponent } from './pages/error/error.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +16,6 @@ import { ErrorComponent } from './pages/error/error.component';
     HeaderComponent,
     NotFoundComponent,
     HomeComponent,
-    
-
-    
   ],
   imports: [
     BrowserModule,
