@@ -65,5 +65,21 @@
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "image": "https://bootdey.com/img/Content/avatar/avatar2.png"
     }
+  ],
+  "invoices": [
+    {
+      "id": 1,
+      "discountAmount": 20,
+      "billAmount": 500,
+      "dateBill": "14/07/2021",
+      "Status": true
+    },
+    {
+      "discountAmount": "50",
+      "billAmount": 1000,
+      "dateBill": "02/10/2020",
+      "Status": false,
+      "id": 2
+    }
   ]
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FournisseurComponent } from 'src/app/pages/fournisseur/fournisseur.component';
-import { ListFournisseurComponent } from 'src/app/pages/list-fournisseur/list-fournisseur.component';
+import { ListFournisseurComponent } from './list-fournisseur/list-fournisseur.component';
+import { FournisseurComponent } from './fournisseur/fournisseur.component';
 
 const routes: Routes = [
   { path: 'list', component: ListFournisseurComponent },

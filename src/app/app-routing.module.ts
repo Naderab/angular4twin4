@@ -28,6 +28,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/account/account.module').then((m) => m.AccountModule),
   },
+  {
+    path:'invoices',
+    loadChildren:() => 
+      import('./features/invoices/invoices.module').then((m) => m.InvoicesModule)  
+  },
   { path: '**', component: NotFoundComponent },
 ];
 

@@ -1,0 +1,21 @@
+<div class="container" style="margin-top:25px">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>discountAmount</th>
+                    <th>billAmount</th>
+                    <th>dateBill</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let i of invoices">
+                    <app-invoice [invoice]="i" (d)="delete($event)" (u)="update($event)"></app-invoice>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row" [hidden]="hide">
+        <app-form-invoice [i]="invoice" (updateInvoice)="updateInvoice($event)"></app-form-invoice>
+    </div>
+</div>

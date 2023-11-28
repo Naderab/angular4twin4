@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="invoice" (ngSubmit)="update()">
+        <div class="mb-3">
+            <label for="discountAmount" class="form-label">Discount Amount</label>
+            <input type="text" class="form-control" id="discountAmount" formControlName="discountAmount">
+        </div>
+        <div class="mb-3">
+            <label for="billAmount" class="form-label">Bill Amount</label>
+            <input type="text" class="form-control" id="billAmount" formControlName="billAmount">
+        </div>
+        <div class="mb-3">
+            <label for="dateBill" class="form-label">Date Bill</label>
+            <input type="text" class="form-control" id="dateBill" formControlName="dateBill">
+        </div>
+        <div class="mb-3">
+            <label for="Status" class="form-label">Status</label>
+            <input type="text" class="form-control" id="Status" formControlName="Status">
+        </div>
+        <div class="mb-3">
+            <input type="submit" class="btn btn-primary" >
+        </div>
+        </form>
+    </div>
+</div>
